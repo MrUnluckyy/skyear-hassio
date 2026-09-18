@@ -1,7 +1,10 @@
+---
 name: SkyEar
 version: "0.2.5"
 slug: skyear
-description: Listen to a security camera's microphone and detect aircraft, checked against live ADS-B
+description: >-
+  Listen to a security camera's microphone and detect aircraft,
+  checked against live ADS-B
 url: https://github.com/MrUnluckyy/skyear
 # No armv7: numpy publishes no wheel for 32-bit ARM. This covers Home Assistant
 # Green and Yellow, a Raspberry Pi 4 or 5 on 64-bit OS, Intel boxes and VMs.
@@ -9,6 +12,8 @@ arch:
   - aarch64
   - amd64
 image: ghcr.io/mrunluckyy/skyear-agent-{arch}
+startup: application
+boot: auto
 
 # The agent has its own entrypoint and manages its own threads.
 init: false
@@ -21,9 +26,3 @@ ingress: true
 ingress_port: 8088
 panel_icon: mdi:ear-hearing
 panel_title: SkyEar
-
-# The agent writes its config, device token and recorded clips here. The
-# Supervisor persists /data across add-on updates, which is exactly what is
-# wanted: pairing survives an upgrade.
-options: {}
-schema: {}
