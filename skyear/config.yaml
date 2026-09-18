@@ -1,5 +1,5 @@
 name: SkyEar
-version: "0.2.4"
+version: "0.2.5"
 slug: skyear
 description: Listen to a security camera's microphone and detect aircraft, checked against live ADS-B
 url: https://github.com/MrUnluckyy/skyear
